@@ -20,11 +20,13 @@ class TrainsTableSeeder extends Seeder
         $new_train->Company = $faker->company();
         $new_train->Departure_station = $faker->city();
         $new_train->Arrival_station = $faker->city();
+        
         // CONTROLLO: se la stazione di patenza è uguale alla stazione di arrivo allora mi generi di nuovo una città faker
         while($new_train->Departure_station === $new_train->Arrival_station){
             $new_train->Arrival_station = $faker->city();
         }
         // 
+
         $new_train->Departure_time = $faker->dateTimeBetween('-1 day', '+2 days');
         $new_train->Time_of_arrival = $faker->dateTimeBetween($new_train->Departure_time , '+1 day');
         $new_train->Train_code = $faker->bothify('?????#####');
