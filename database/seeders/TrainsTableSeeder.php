@@ -33,7 +33,7 @@ class TrainsTableSeeder extends Seeder
         $new_train->Carriage_number = $faker->rand(1,10);
         $new_train->On_schedule = $faker->boolean(80);
         $new_train->Cancelled = $faker->boolean(10);
-        $new_train->Platform = rand(1, 20);
+        $new_train->Platform = $faker->rand(1, 20);
         $new_train->save();
     }
 }
